@@ -1,18 +1,22 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-import index from './modules/index'
+import activities from './modules/activities'
+import user from './modules/user'
+import movie from './modules/movie'
+import book from './modules/book'
+import group from './modules/group'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   modules: {
-    index,
-    // activities,
-    // book,
+    activities,
+    movie,
+    book,
     // subject,
-    // group,
+    group,
     // search,
-    // user
+    user
   }
 })
