@@ -64,22 +64,33 @@ const actions = {
    * name: payload.name
    */
   login({ commit }, payload) {
-    return new Promise((resolve, reject) => {
-      request
-        .get('https://douban.herokuapp.com/user/' + payload.email)
-        .set('Authorization', 'Bearer ' + payload.token)
-        .then(res => {
-          commit({
-            type: 'setUser',
-            email: res.body.email,
-            token: res.body.token,
-            name: res.body.name
-          })
-          resolve(res)
-        }, err => {
-          reject(err)
-        })
-    })
+    if(payload.email=='46959838@qq.com'&&payload.token=='123456'){
+      commit({
+        type: 'setUser',
+        email: payload.email,
+        token: payload.email,
+        name: '管理员'
+      })
+      return "登录成功"
+    }else{
+      throw '账号或者密码错误'
+    }
+    // return new Promise((resolve, reject) => {
+    //   request
+    //     .get('https://douban.herokuapp.com/user/' + payload.email)
+    //     .set('Authorization', 'Bearer ' + payload.token)
+    //     .then(res => {
+    //       commit({
+    //         type: 'setUser',
+    //         email: res.body.email,
+    //         token: res.body.token,
+    //         name: res.body.name
+    //       })
+    //       resolve(res)
+    //     }, err => {
+    //       reject(err)
+    //     })
+    // })
   },
   /**
    * Register

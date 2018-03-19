@@ -9,6 +9,9 @@ import MovieView from '../views/MovieView'
 import BookView from '../views/BookView'
 import StatusView from '../views/StatusView'
 import GroupView from '../views/GroupView'
+import LoginView from '../views/LoginView'
+
+
 
 Vue.use(Router)
 
@@ -75,11 +78,11 @@ export default new Router({
     //     search: SearchView
     //   }
     // },
-    // {
-    //   path: '/login',
-    //   name: 'LoginView',
-    //   component: LoginView
-    // },
+    {
+      path: '/login',
+      name: 'LoginView',
+      component: LoginView
+    },
     // {
     //   path: '/register',
     //   name: 'RegisterView',
